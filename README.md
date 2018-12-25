@@ -1,3 +1,7 @@
+Chang Tan
+
+Lister Unlimited Cybersecurity Solutions LLC.
+
 # Hack The Box Little Tommy - Work in Progress
 
 What I have built is a Pythonic process injector based on the C language's ptrace syscall. This is based on the following Python frameworks
@@ -10,6 +14,7 @@ The following conclusions are derived from the Little Tommy exercise
 
 1. The little_tommy application appears to have a double-free vulnerability
 2. The goal of the process injector is to inject malicious code meant to trigger that double-free vulnerability and then dump the contents of the freed unallocated memory that still has a pointer pointing to it
+
 # How it works
 
 After running "python injector.py pid", the app automatically searches the memory map located at /proc/pid/maps. It then performs the math on the hexidecimal values to determine the maximum size of the buffer compared to your shellcode as well as pointing out important details such as executable locations in memory "r-xp".
